@@ -1,16 +1,16 @@
-"use client";
-import React, { FormEvent } from "react";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+'use client';
+import React, { FormEvent } from 'react';
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export function Search() {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
   const router = useRouter();
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSearch("");
+    setSearch('');
+    router.push(`/${search}/`);
   };
-  router.push(`/${search}/`);
 
   return (
     <form
